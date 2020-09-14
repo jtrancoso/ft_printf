@@ -2,10 +2,10 @@
 
 int main (void)
 {
-	int i = 45;
-	int u = 2;
-	printf("%03d\n", i);
-	printf("%03d\n", u);
-	printf("%-3d\n", i);
-	printf("%-3d\n", u);
+	char i = 's';
+	char u = 'z';
+	//printf("%03c\n", i);
+	printf("Real printf = %-3c\n", u);
+	printf("Real printf = %03c\n", u);
+	//printf("%-3c\n", u);
 }

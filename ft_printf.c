@@ -6,13 +6,13 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/09 13:13:48 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/14 13:36:21 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	check_format(const char *s, int i, va_list args)
+int	check_format(const char *s, int i, va_list args, t_flags *flags)
 {
 	if (s[i] == 'd' || s[i] == 'i')
 	{
@@ -21,8 +21,7 @@ int	check_format(const char *s, int i, va_list args)
 	}
 	else if (s[i] == 'c')
 	{
-		char c = (char)va_arg(args, int);
-		write(1, &c, 1);
+		ft_print_c((char)va_arg(args, int), flags);
 	}
 	else if (s[i] == 's')
 	{
@@ -39,14 +38,16 @@ int		ft_printf(const char *s, ...)
 
 	va_start(args, s);
 	i = 0;
+	t_flags		flags;
 	while (s[i])
 	{
 		if (s[i] == '%')
 		{
 			i++;
-			check_format(s, i, args);
+			start_flags(&flags);
+			check_format(s, i, args, &flags);
 		}
-		else 
+		else
 		{
 			write(1, &s[i], 1);
 		}
@@ -54,19 +55,4 @@ int		ft_printf(const char *s, ...)
 	}
 	va_end(args);
 	return (0);
-}
-
-int		main(void)
-{
-	int		i;
-	char	c;
-	char	s[100] = "hola que tal";
-	
-	i = '3';
-	c = 'z';
-	ft_printf("Imprime int = %i\n", i);
-	ft_printf("Imprime char = %c\n", c);
-	ft_printf("Imprime string = %s\n", s);
-	//ft_printf("Imprime unsigned dec = %u\n", i);
-	
 }
