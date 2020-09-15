@@ -10,7 +10,8 @@ int		main(void)
 	c = 'z';
 	//ft_printf("Imprime int = %i\n", i);
 	ft_printf("Mi printf = %-3c\n", c);
-	ft_printf("Mi printf = %03c\n", c);
+	ft_printf("Mi printf = %c %c\n", c, c);
+	printf("Real printf = %-3c\n", c);
 	//ft_printf("Imprime string = %s\n", s);
 	//ft_printf("Imprime unsigned dec = %u\n", i);
 }

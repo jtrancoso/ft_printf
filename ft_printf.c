@@ -6,13 +6,13 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/14 13:36:21 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/15 13:17:28 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	check_format(const char *s, int i, va_list args, t_flags *flags)
+void		check_format(const char *s, int i, va_list args, t_flags *flags)
 {
 	if (s[i] == 'd' || s[i] == 'i')
 	{
@@ -28,17 +28,19 @@ int	check_format(const char *s, int i, va_list args, t_flags *flags)
 		char *hola = va_arg(args, char *);
 		write(1, hola, strlen(hola));
 	}
-	return (i);
+	if (s[i])
+		i++;
 }
 
 int		ft_printf(const char *s, ...)
 {
+	int			i;
 	va_list		args;
-	int i;
+	t_flags		flags;
 
 	va_start(args, s);
 	i = 0;
-	t_flags		flags;
+	flags.count = 0;
 	while (s[i])
 	{
 		if (s[i] == '%')
@@ -49,10 +51,10 @@ int		ft_printf(const char *s, ...)
 		}
 		else
 		{
-			write(1, &s[i], 1);
+			flags.count += write(1, &s[i], 1);
 		}
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (flags.count);
 }
