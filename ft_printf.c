@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/15 13:17:28 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/17 13:48:43 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ int		ft_printf(const char *s, ...)
 		{
 			i++;
 			start_flags(&flags);
+			printf("width = %d\n", flags.width);
+			printf("minus = %d", flags.minus);
+			printf("zero = %d", flags.zero);
+			check_flags(s, i, args, &flags);
+			printf("width = %d\n", flags.width);
+			printf("minus = %d", flags.minus);
+			printf("zero = %d", flags.zero);
 			check_format(s, i, args, &flags);
 		}
 		else
