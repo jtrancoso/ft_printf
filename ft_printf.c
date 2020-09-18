@@ -3,33 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/17 22:17:38 by marvin           ###   ########.fr       */
+/*   Updated: 2020/09/18 13:19:35 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void		check_format(const char *s, int i, va_list args, t_flags *flags)
+void		check_format(const char *s, int *i, va_list args, t_flags *flags)
 {
-	if (s[i] == 'd' || s[i] == 'i')
+	if (s[*i] == 'd' || s[*i] == 'i')
 	{
 		int h = va_arg(args, int);
 		write(1, &h, 1);
 	}
-	else if (s[i] == 'c')
+	else if (s[*i] == 'c')
 	{
 		ft_print_c((char)va_arg(args, int), flags);
 	}
-	else if (s[i] == 's')
+	else if (s[*i] == 's')
 	{
-		char *hola = va_arg(args, char *);
-		write(1, hola, strlen(hola));
+		ft_print_s((char *)va_arg(args, char *), flags);
 	}
-	if (s[i])
-		i++;
 }
 
 int		ft_printf(const char *s, ...)
@@ -47,18 +44,19 @@ int		ft_printf(const char *s, ...)
 		{
 			i++;
 			start_flags(&flags);
-			printf("width = %d\n", flags.width);
+			/*printf("width = %d\n", flags.width);
 			printf("minus = %d", flags.minus);
-			printf("zero = %d", flags.zero);
+			printf("zero = %d", flags.zero);*/
 			check_flags(s, &i, args, &flags);
-			printf("width = %d\n", flags.width);
+			/*printf("width = %d\n", flags.width);
 			printf("minus = %d", flags.minus);
 			printf("zero = %d", flags.zero);
-			check_format(s, i, args, &flags);
+			printf("width = %d\n", flags.width);*/
+			check_format(s, &i, args, &flags);
 		}
 		else
 		{
-			flags.count += write(1, &s[i], 1);
+				flags.count += write(1, &s[i], 1);
 		}
 		i++;
 	}

@@ -5,4 +5,4 @@ pft_2019/
 *.o
 libftprintf.a
 a.out.dSYM/
-libft/libft.a
+*.a
