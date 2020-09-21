@@ -23,17 +23,10 @@ void	ft_print_c(int c, t_flags *flags)
 		}
 		else
 		{
-			flags->count +=ft_filling(flags->width - 1, flags->zero);
+			flags->count += ft_filling(flags->width - 1, flags->zero);
 			flags->count += write(1, &c, 1);
 		}
 	}
 	else
 		flags->count += write(1, &c, 1);
-	/*printf("width = %d\n", flags->width);
-	if (flags->width > 0 && flags->minus == -1)
-		flags->count += ft_filling(flags->width - sizeof(char), flags->zero);
-	flags->count += write(1, &c, 1);
-	if (flags->width > 0 && flags->minus == 1)
-		flags->count += ft_filling(flags->width - sizeof(char), flags->zero);*/
-	
 }

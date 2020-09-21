@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:04:23 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/18 11:31:58 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/21 13:33:20 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	space_or_zero(const char *s, int *i, t_flags *flags)
 		}
 		if (s[*i] == '0' && flags->minus == -1)
 			flags->zero = 1;
-		*i += 1;;
+		*i += 1;
 	}
 }
 
@@ -42,6 +42,15 @@ void	check_width(const char *s, int *i, va_list args, t_flags *flags)
 		flags->width = ft_atoi(&s[*i]);
 		while (s[*i] >= '0' && s[*i] <= '9')
 			*i += 1;
+	}
+}
+
+void	check_precision(const char *s, int *i, va_list args, t_flags *flags)
+{
+	if (s[*i] == '.')
+	{
+		flags->zero = -1;
+		*i += 1;
 	}
 }
 
