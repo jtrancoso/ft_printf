@@ -6,19 +6,36 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 13:23:10 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/21 12:41:01 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/22 12:54:43 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+void	find_string(char **s, int *len, va_list args, t_flags *flags)
+{
+	char *tmp;
+
+	*s = ft_strdup(va_arg(args, char *));
+	if (*s == NULL)
+	{
+		*s = ft_strdup("(null)");
+	}
+	if (flags->precision != -1)
+	{
+		tmp = *s;
+		*s = ft_substr(tmp, 0, flags->precision);
+		free(tmp);
+	}
+	*len = ft_strlen(*s);
+}
+
 void	ft_print_s(va_list args, t_flags *flags)
 {
-	char *s;
-	int len;
+	char	*s;
+	int		len;
 
-	s = ft_strdup(va_arg(args, char *));
-	len = ft_strlen(s);
+	find_string(&s, &len, args, flags);
 	if (flags->width != -1)
 	{
 		if (flags->minus == 1)
@@ -34,4 +51,5 @@ void	ft_print_s(va_list args, t_flags *flags)
 	}
 	else
 		flags->count += write(1, s, len);
+	free(s);
 }
