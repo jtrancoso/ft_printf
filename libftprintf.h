@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 13:19:20 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/22 12:55:02 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/22 13:28:22 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_printf(const char *s, ...);
 void	ft_print_c(int c, t_flags *flags);
 void	ft_print_s(va_list args, t_flags *flags);
 void	find_string(char **s, int *len, va_list args, t_flags *flags);
+void	ft_print_id(int n, t_flags *flags);
 void	space_or_zero(const char *s, int *i, t_flags *flags);
 void	check_width(const char *s, int *i, va_list args, t_flags *flags);
 void	check_star(const char *s, int *i, va_list args, t_flags *flags);
