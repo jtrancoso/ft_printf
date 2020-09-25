@@ -7,9 +7,10 @@ int		main(void)
 	char 	str[100] = "hello";
 	int i = 7;
 	int a = -267;
+	int x = 33;
 	
 	//ft_printf("Imprime int = %i\n", i);
-	ft_printf("%c%c%c%c%c%c%c%c%c%c\n", c, c, c, c, c, c, c, c, c, c);
+	/*ft_printf("%c%c%c%c%c%c%c%c%c%c\n", c, c, c, c, c, c, c, c, c, c);
 	ft_printf("hola\n");
 	ft_printf("1 =%s, 2=%s\n", s, s);
 	ft_printf("hello %s.\n", NULL);
@@ -17,8 +18,10 @@ int		main(void)
 	ft_printf("%5\n");
 	printf("Real: %d, %.2d\n", i, i);
 	ft_printf("Mio: %d, %.2d\n", i, i);
-	printf("Real: %d, %.5d\n", a, a);
-	ft_printf("Mio: %d, %.5d\n", a, a);
+	printf("Real: %d\n", a);
+	ft_printf("Mio: %d\n", a);*/
+	printf("Real: %7d\n", x);
+	ft_printf("Mio : %7d\n", x);
 	//ft_printf("Imprime string = %s\n", s);
 	//ft_printf("Imprime unsigned dec = %u\n", i);
 }

@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:26:41 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/25 11:14:46 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/25 13:26:07 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_putnbr(int n, t_flags *flags)
 		flags->count += write(1, "-", 1);
 	}
 	if (num > 9)
-		ft_putnbr(n / 10, flags);
+		ft_putnbr(num / 10, flags);
 	aux = num % 10 + '0';
 	flags->count += write(1, &aux, 1);
 }
@@ -79,10 +79,8 @@ void	ft_print_number(int *n, int num_len, t_flags *flags)
 	ft_putnbr(*n, flags);
 }
 
-void	ft_print_id(va_list args, t_flags *flags)
+void	ft_print_id(va_list args, t_flags *flags, int n, int len)
 {
-	int n;
-	int len;
 	int true_len;
 
 	n = va_arg(args, int);
@@ -92,7 +90,8 @@ void	ft_print_id(va_list args, t_flags *flags)
 		if (flags->minus == 1)
 		{
 			ft_print_number(&n, len, flags);
-			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0; //esto hay que cortarlo
+			(true_len < flags->width) ? flags->count +=
+			ft_filling(flags->width - true_len, flags->zero) : 0;
 		}
 		else
 		{
@@ -101,7 +100,8 @@ void	ft_print_id(va_list args, t_flags *flags)
 				n = -n;
 				flags->count += write(1, "-", 1);
 			}
-			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0; //esto hay quee cortarlo
+			(true_len < flags->width) ? flags->count +=
+			ft_filling(flags->width - true_len, flags->zero) : 0;
 			ft_print_number(&n, len, flags);
 		}
 	else

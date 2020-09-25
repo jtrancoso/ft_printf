@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 13:19:20 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/24 13:25:36 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/25 13:25:22 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_printf(const char *s, ...);
 void	ft_print_c(int c, t_flags *flags);
 void	ft_print_s(va_list args, t_flags *flags);
 void	find_string(char **s, int *len, va_list args, t_flags *flags);
-void	ft_print_id(va_list args, t_flags *flags);
+void	ft_print_id(va_list args, t_flags *flags, int n, int len);
 int		find_len(int *n, t_flags *flags);
 int		find_true_len(int *n, int len, t_flags *flags);
 void	ft_putnbr(int n, t_flags *flags);
