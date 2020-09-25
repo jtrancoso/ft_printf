@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:26:41 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/24 13:25:14 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/25 11:00:55 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	ft_print_id(va_list args, t_flags *flags)
 		if (flags->minus == 1)
 		{
 			ft_print_number(&n, len, flags);
-			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0;
+			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0; //esto hay que cortarlo
 		}
 		else
 		{
