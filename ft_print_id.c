@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:26:41 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/25 11:13:28 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/25 11:14:46 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	ft_print_id(va_list args, t_flags *flags)
 				n = -n;
 				flags->count += write(1, "-", 1);
 			}
-			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0; //esto hay qu cortarlo
+			(true_len < flags->width) ? flags->count += ft_filling(flags->width, true_len) : 0; //esto hay quee cortarlo
 			ft_print_number(&n, len, flags);
 		}
 	else
