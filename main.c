@@ -7,7 +7,7 @@ int		main(void)
 	char 	str[100] = "hello";
 	int i = 7;
 	int a = -267;
-	int x = 12;
+	int x = 52625;
 	
 	//ft_printf("Imprime int = %i\n", i);
 	/*ft_printf("%c%c%c%c%c%c%c%c%c%c\n", c, c, c, c, c, c, c, c, c, c);
@@ -26,8 +26,8 @@ int		main(void)
 	ft_printf("Mio : %7d\n", x);
 	ft_printf("Imprime string = %s\n", s);
 	ft_printf("Imprime unsigned dec = %u\n", i);*/
-	printf("hexa: %x\n", x);
-	printf("HEXA: %X\n", x);
+	ft_printf("hexa mio:  %X\n", x);
+	printf("hexa real: %X\n", x);
 
 
 }

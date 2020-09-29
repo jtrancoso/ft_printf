@@ -6,19 +6,11 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:04:23 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/22 11:48:33 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/29 11:01:45 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-void	start_flags(t_flags *flags)
-{
-	flags->precision = -1;
-	flags->width = -1;
-	flags->zero = -1;
-	flags->minus = -1;
-}
 
 void	space_or_zero(const char *s, int *i, t_flags *flags)
 {

@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 13:19:20 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/28 12:38:13 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/29 13:29:52 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ void	ft_putnbr(int n, t_flags *flags);
 void	ft_print_number(int *n, int num_len, t_flags *flags);
 void	ft_print_x_lower(va_list args, t_flags *flags);
 void	ft_print_x_upper(va_list args, t_flags *flags);
-void	put_hex(int n, char lettercase, t_flags *flags);
+void	put_hex(unsigned int n, char lettercase, t_flags *flags);
+int		find_hex_len(unsigned int *n, t_flags *flags);
+void	ft_print_hexnum_lower(unsigned int *n, int hex_len, t_flags *flags);
+void	ft_print_hexnum_upper(unsigned int *n, int hex_len, t_flags *flags);
 void	space_or_zero(const char *s, int *i, t_flags *flags);
 void	check_width(const char *s, int *i, va_list args, t_flags *flags);
 void	check_star(const char *s, int *i, va_list args, t_flags *flags);

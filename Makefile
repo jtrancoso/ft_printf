@@ -6,11 +6,11 @@
 #    By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 11:40:04 by jtrancos          #+#    #+#              #
-#    Updated: 2020/09/23 10:50:10 by jtrancos         ###   ########.fr        #
+#    Updated: 2020/09/29 13:30:47 by jtrancos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_printf.c ft_print_c.c ft_print_s.c ft_print_id.c ft_flags.c ft_filling.c
+SRCS	= ft_printf.c ft_print_c.c ft_print_s.c ft_print_id.c ft_print_x_lower.c ft_print_x_upper.c ft_flags.c ft_filling.c ft_printf_utils.c
 OBJS	= ${SRCS:.c=.o}
 NAME	= libftprintf.a
 CC		= cc
