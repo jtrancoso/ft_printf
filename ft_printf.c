@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/29 13:42:03 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/09/30 11:39:41 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void		check_format(const char *s, int *i, va_list args, t_flags *flags)
 		ft_print_x_lower(args, flags);
 	else if (s[*i] == 'X')
 		ft_print_x_upper(args, flags);
+	else if (s[*i] == 'u')
+		ft_print_u(args, flags);
 }
 
 int		ft_printf(const char *s, ...)
