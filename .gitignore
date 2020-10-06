@@ -6,3 +6,5 @@ pft_2019/
 libftprintf.a
 a.out.dSYM/
 *.a
+printf-tester/
+printf_lover_v2/

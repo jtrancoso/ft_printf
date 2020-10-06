@@ -12,8 +12,6 @@ int		main(void)
 	size_t	b;
 	void *ptr;
 
-	ptr = "1234";
-	
 	/*ft_printf("Imprime int = %i\n", i);
 	ft_printf("%c%c%c%c%c%c%c%c%c%c\n", c, c, c, c, c, c, c, c, c, c);
 	ft_printf("hola\n");
@@ -34,8 +32,9 @@ int		main(void)
 	ft_printf("hexa mio:  %X\n", x);
 	printf("hexa real: %X\n", x);
 	ft_printf("Mi u: %u\n", u);
-	printf("Su u: %u\n", u);*/
-	ft_printf("Mi p: %p\n", ptr);
+	printf("Su u: %u\n", u);
 	printf("Su p: %p\n", ptr);
+	ft_printf("Mi p: %p\n", ptr);*/
+	ft_printf("HOLA HOLA\n");
 	
 }

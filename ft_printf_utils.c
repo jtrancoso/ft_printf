@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 12:33:22 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/29 13:46:58 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/10/06 12:09:43 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,17 @@ int		find_hex_len(unsigned int *n, t_flags *flags)
 	return (hex_len);
 }
 
-void	put_hex(unsigned int n, char lettercase, t_flags *flags)
+void	put_hex(size_t n, char lettercase, t_flags *flags)
 {
-	int hex;
+	int		hex;
+	size_t	aux;
 
+	aux = n;
 	if (n == 0 && flags->precision == 0)
 		return ;
-	if (n >= 16)
-		put_hex(n / 16, lettercase, flags);
-	hex = n % 16;
+	if (aux >= 16)
+		put_hex(aux / 16, lettercase, flags);
+	hex = aux % 16;
 	if (hex > 9)
 	{
 		if (lettercase == 'l')
