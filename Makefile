@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 11:40:04 by jtrancos          #+#    #+#              #
-#    Updated: 2020/10/04 14:16:47 by marvin           ###   ########.fr        #
+#    Updated: 2020/10/07 12:04:08 by jtrancos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ OBJS	= ${SRCS:.c=.o}
 NAME	= libftprintf.a
 CC		= cc
 RM		= rm -f
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -g -fsanitize=address -Wall -Werror -Wextra
 .c.o:
 				${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 ${NAME}:		${OBJS}

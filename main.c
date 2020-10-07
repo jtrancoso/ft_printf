@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	char	c = 'z';
+	/*char	c = 'z';
 	char	s[100] = "Elenaaa";
 	char 	str[100] = "hello";
 	int i = 7;
@@ -11,6 +11,7 @@ int		main(void)
 	int x = 10;
 	size_t	b;
 	void *ptr;
+	t_flags flags;*/
 
 	/*ft_printf("Imprime int = %i\n", i);
 	ft_printf("%c%c%c%c%c%c%c%c%c%c\n", c, c, c, c, c, c, c, c, c, c);
@@ -35,6 +36,12 @@ int		main(void)
 	printf("Su u: %u\n", u);
 	printf("Su p: %p\n", ptr);
 	ft_printf("Mi p: %p\n", ptr);*/
-	ft_printf("HOLA HOLA\n");
+	//printf("%5\n");
+	ft_printf("%-5");
+	/*ft_printf("%\n");
+	ft_printf("%05\n");
+	ft_printf("%-5\n");
+	ft_printf("%*d", -2, -10);
+	ft_printf("%0*d", -3,-10);*/
 	
 }
