@@ -36,8 +36,10 @@ int		main(void)
 	printf("Su u: %u\n", u);
 	printf("Su p: %p\n", ptr);
 	ft_printf("Mi p: %p\n", ptr);*/
-	//printf("%5\n");
+	//printf("%-5");
 	ft_printf("%-5");
+	//ft_printf("%.*s", -3, "hello");
+	//printf("%.*s", -3, "hello");
 	/*ft_printf("%\n");
 	ft_printf("%05\n");
 	ft_printf("%-5\n");

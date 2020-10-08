@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/07 13:15:23 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/10/08 13:42:27 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void		check_format(const char *s, int *i, va_list args, t_flags *flags)
 		ft_print_p(args, flags);
 	else if (s[*i + 1] != '\0')
 		*i += 1;
-	
-	
 }
 
 int		ft_printf(const char *s, ...)
@@ -55,9 +53,7 @@ int		ft_printf(const char *s, ...)
 			check_format(s, &i, args, &flags);
 		}
 		else
-		{
 			flags.count += write(1, &s[i], 1);
-		}
 		i++;
 	}
 	va_end(args);
