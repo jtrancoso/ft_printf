@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/08 13:42:27 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/10/08 20:38:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,13 @@ int		ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
+			printf("hola\n");
 			start_flags(&flags);
+			printf("hola\n");
 			check_flags(s, &i, args, &flags);
+			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 			check_format(s, &i, args, &flags);
+			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 		}
 		else
 			flags.count += write(1, &s[i], 1);
