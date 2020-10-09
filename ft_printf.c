@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/08 20:38:02 by marvin           ###   ########.fr       */
+/*   Updated: 2020/10/09 13:36:30 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void		check_format(const char *s, int *i, va_list args, t_flags *flags)
 		ft_print_u(args, flags);
 	else if (s[*i] == 'p')
 		ft_print_p(args, flags);
-	else if (s[*i + 1] != '\0')
+	else if (s[*i + 1])
 		*i += 1;
+	
 }
 
 int		ft_printf(const char *s, ...)
@@ -48,13 +49,9 @@ int		ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			printf("hola\n");
 			start_flags(&flags);
-			printf("hola\n");
 			check_flags(s, &i, args, &flags);
-			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 			check_format(s, &i, args, &flags);
-			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 		}
 		else
 			flags.count += write(1, &s[i], 1);
