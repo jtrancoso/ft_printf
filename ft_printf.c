@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/10/13 13:44:38 by marvin           ###   ########.fr       */
+=======
+/*   Updated: 2020/10/09 13:36:30 by jtrancos         ###   ########.fr       */
+>>>>>>> 2411918b7d50cc6c1000c7217d32dffdc0c37793
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +54,13 @@ int		ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			printf("hola\n");
 			start_flags(&flags);
-			printf("hola\n");
 			check_flags(s, &i, args, &flags);
+<<<<<<< HEAD
 			printf("s[i]: %c, s: %s, i: %d, minus: %d, width: %d\n", s[i], s, i, flags.minus, flags.width);
+=======
+>>>>>>> 2411918b7d50cc6c1000c7217d32dffdc0c37793
 			check_format(s, &i, args, &flags);
-			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 		}
 		else
 			flags.count += write(1, &s[i], 1);
