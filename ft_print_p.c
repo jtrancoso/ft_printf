@@ -14,7 +14,7 @@
 
 int		ft_ptr_len(size_t *address, t_flags *flags)
 {
-	int 	len;
+	int		len;
 	size_t	aux;
 
 	aux = *address;
@@ -27,7 +27,7 @@ int		ft_ptr_len(size_t *address, t_flags *flags)
 		len++;
 		aux /= 16;
 	}
-	return (len);	
+	return (len);
 }
 
 void	ft_print_ptr(size_t *address, int len, t_flags *flags)
@@ -56,7 +56,6 @@ void	ft_print_p(va_list args, t_flags *flags)
 	len = ft_ptr_len(&address, flags);
 	true_len = (flags->precision > len) ? flags->precision : len;
 	if (flags->width != -1)
-
 	{
 		if (flags->minus == 1)
 		{

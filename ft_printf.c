@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/08 20:38:02 by marvin           ###   ########.fr       */
+/*   Updated: 2020/10/13 13:44:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void		check_format(const char *s, int *i, va_list args, t_flags *flags)
 		ft_print_u(args, flags);
 	else if (s[*i] == 'p')
 		ft_print_p(args, flags);
+	else if (!s[*i])
+		*i = 1;
 	else if (s[*i + 1] != '\0')
 		*i += 1;
 }
@@ -52,7 +54,7 @@ int		ft_printf(const char *s, ...)
 			start_flags(&flags);
 			printf("hola\n");
 			check_flags(s, &i, args, &flags);
-			printf("minus: %d, width: %d\n", flags.minus, flags.width);
+			printf("s[i]: %c, s: %s, i: %d, minus: %d, width: %d\n", s[i], s, i, flags.minus, flags.width);
 			check_format(s, &i, args, &flags);
 			printf("minus: %d, width: %d\n", flags.minus, flags.width);
 		}
