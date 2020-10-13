@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 12:02:12 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/13 13:54:00 by marvin           ###   ########.fr       */
+/*   Updated: 2020/10/13 14:00:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int		ft_printf(const char *s, ...)
 			i++;
 			start_flags(&flags);
 			check_flags(s, &i, args, &flags);
-			printf("s[i]: %c, s: %s, i: %d, minus: %d, width: %d\n", s[i], s, i, flags.minus, flags.width);
 			check_format(s, &i, args, &flags);
 		}
 		else

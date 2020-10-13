@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 13:19:20 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/10/07 11:38:33 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/10/13 14:05:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_print_hexnum_upper(unsigned int *n, int hex_len, t_flags *flags);
 void	ft_print_u(va_list args, t_flags *flags);
 void	ft_print_p(va_list args, t_flags *flags);
 void	check_flags(const char *s, int *i, va_list args, t_flags *flags);
-int		ft_filling(int n, int class);
+int		ft_filling(int width, int zero);
 void	start_flags(t_flags *flags);
 
 #endif
