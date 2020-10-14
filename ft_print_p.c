@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 12:49:43 by marvin            #+#    #+#             */
-/*   Updated: 2020/10/01 12:49:43 by marvin           ###   ########.fr       */
+/*   Created: 2020/10/14 13:08:43 by jtrancos          #+#    #+#             */
+/*   Updated: 2020/10/14 13:11:29 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,22 @@ void	ft_print_p(va_list args, t_flags *flags)
 	void	*ptr;
 	size_t	address;
 	int		len;
-	int		true_len;
+	int		truelen;
 
 	ptr = va_arg(args, void *);
 	address = (size_t)ptr;
 	len = ft_ptr_len(&address, flags);
-	true_len = (flags->precision > len) ? flags->precision : len;
+	truelen = (flags->precision > len) ? flags->precision : len;
 	if (flags->width != -1)
 	{
 		if (flags->minus == 1)
 		{
 			ft_print_ptr(&address, len, flags);
-			flags->count += ft_filling(flags->width - true_len - 2, flags->zero);
+			flags->count += ft_filling(flags->width - truelen - 2, flags->zero);
 		}
 		else
-		{	
-			flags->count += ft_filling(flags->width - true_len - 2, flags->zero);
+		{
+			flags->count += ft_filling(flags->width - truelen - 2, flags->zero);
 			ft_print_ptr(&address, len, flags);
 		}
 	}
