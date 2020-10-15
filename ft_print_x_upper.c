@@ -6,7 +6,7 @@
 /*   By: jtrancos <jtrancos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 11:16:49 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/09/29 13:45:05 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/10/15 12:22:32 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_print_x_upper(va_list args, t_flags *flags)
 	int				hex_len;
 	int				true_len;
 
-	n = va_arg(args, int);
+	n = va_arg(args, unsigned int);
 	hex_len = find_hex_len(&n, flags);
 	if (flags->precision > hex_len)
 		true_len = flags->precision;
